@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_3" data-name="레이어 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 53.62 20.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_무제_그라디언트_28);
+      }
+
+      .cls-2 {
+        font-family: Pretendard-Black-KSCpc-EUC-H, Pretendard;
+        font-size: 13.68px;
+        font-weight: 800;
+        letter-spacing: .05em;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #130ede;
+      }
+
+      .cls-4 {
+        fill: #fff400;
+      }
+    </style>
+    <linearGradient id="_무제_그라디언트_28" data-name="무제 그라디언트 28" x1="6.09" y1="3.78" x2="14.29" y2="16.37" gradientUnits="userSpaceOnUse">
+      <stop offset=".34" stop-color="#130ede"/>
+      <stop offset=".5" stop-color="#1510de" stop-opacity=".99"/>
+      <stop offset=".59" stop-color="#1e19df" stop-opacity=".95"/>
+      <stop offset=".67" stop-color="#2d29e1" stop-opacity=".89"/>
+      <stop offset=".74" stop-color="#433fe4" stop-opacity=".79"/>
+      <stop offset=".8" stop-color="#5f5ce8" stop-opacity=".68"/>
+      <stop offset=".86" stop-color="#827fed" stop-opacity=".53"/>
+      <stop offset=".91" stop-color="#aba9f3" stop-opacity=".36"/>
+      <stop offset=".96" stop-color="#d9d8f9" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <circle class="cls-3" cx="10.41" cy="10.64" r="9.56"/>
+    <circle class="cls-4" cx="9.56" cy="9.56" r="9.56"/>
+    <path class="cls-1" d="m5.26,9.98c-1.16-1.93-.54-4.44,1.39-5.6s4.44-.54,5.6,1.39.84,9.3.84,9.3c0,0-6.66-3.16-7.83-5.09Z"/>
+  </g>
+  <text class="cls-2" transform="translate(22.41 13.16)"><tspan x="0" y="0">pick</tspan></text>
+</svg>
