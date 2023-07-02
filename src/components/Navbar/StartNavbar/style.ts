@@ -16,5 +16,8 @@ export const StartNav = styled.div`
       position: relative;
       right: 20%;
     }
+    a{
+      font-weight: 400;
+    }
   }
 `
