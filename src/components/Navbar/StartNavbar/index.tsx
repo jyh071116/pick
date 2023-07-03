@@ -4,18 +4,38 @@ import imgLogo from "../../../assets/logo.svg";
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../store";
+import { changeState } from "../../../store/partialFullpage";
 
-const StartNavbar = () => {
+interface StartNavbarProps {
+  partialFullpage: boolean;
+}
+
+const StartNavbar = (props: StartNavbarProps): JSX.Element => {
+  const dispatch = useDispatch<AppDispatch>();
+
   return (
-    <N.Navbar>
+    <N.Navbar partialFullpage={props.partialFullpage}>
       <S.StartNav>
         <div>
-          <Link to="/">
+          <Link
+            to="/"
+            onClick={() => {
+              dispatch(changeState(false));
+            }}
+          >
             <S.StartNavLogo src={imgLogo} alt="logo" />
           </Link>
         </div>
         <div>
-          <Link to="/introduce">소개</Link>
+          <S.IntroduceButton
+            onClick={() => {
+              dispatch(changeState(true));
+            }}
+          >
+            소개
+          </S.IntroduceButton>
         </div>
         <div>
           <Link to="/main">시작</Link>

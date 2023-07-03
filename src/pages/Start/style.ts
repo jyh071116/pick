@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
-export const StartPage = styled.div`
+export const StartPage = styled.div<{ partialFullpage: boolean }>`
   background: linear-gradient(to bottom, #ffffff, rgba(19, 14, 222, 0.3));
   display: flex;
   flex-direction: column;
@@ -8,6 +8,11 @@ export const StartPage = styled.div`
   width: 100vw;
   height: 100vh;
   position: fixed;
+  ${(props) =>
+    props.partialFullpage &&
+    css`
+      transform: translateY(-100vh);
+    `}
 `;
 
 export const StartMainContent = styled.div`
@@ -27,7 +32,7 @@ export const StartButton = styled.div`
   position: relative;
   top: 20%;
   width: 135px;
-  z-index:2;
+  z-index: 2;
 `;
 
 export const StartButtonItem = styled.button`
@@ -38,7 +43,6 @@ export const StartButtonItem = styled.button`
   padding: 0.75rem 1rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
-  border: none;
   border-radius: 10px;
   font-size: 1.25rem;
   &:hover {
@@ -46,7 +50,7 @@ export const StartButtonItem = styled.button`
   }
 `;
 
-const quadraticMotion = keyframes`
+const AirplainMotion = keyframes`
   0%{
     offset-distance: 0%
   }
@@ -61,11 +65,29 @@ export const Airplain = styled.img`
   position: absolute;
   top: 50%;
   left: -100px;
-  offset: path('m.38,544.3S735.88-320.2,1268.88,130.8') auto;
-  animation: ${quadraticMotion} 7.5s ease;
+  offset: path("m.38,544.3S735.88-320.2,1268.88,130.8") auto;
+  animation: ${AirplainMotion} 7.5s ease;
   offset-distance: 100%;
-  &::after{
-    content: url('../../assets/airplaneLine.svg');
+  &::after {
+    content: url("../../assets/airplaneLine.svg");
     display: block;
+  }
+`;
+
+const DownMotion = keyframes`
+  0% { transform: translate(0px, 4px) rotate(0deg); }
+    
+  50% { transform: translate(0px, 0px) rotate(0deg); }
+
+  100% { transform: translate(0px, 4px) rotate(0deg); }
+`;
+
+export const downButton = styled.img`
+  width: 70px;
+  position: absolute;
+  top: 92.5%;
+  animation: ${DownMotion} 1s infinite;
+  &:hover {
+    cursor: pointer;
   }
 `;
