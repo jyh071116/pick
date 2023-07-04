@@ -1,10 +1,11 @@
 import StartNavbar from "../../components/Navbar/StartNavbar";
+import Introduce from "../../components/Introduce";
 import * as S from "./style";
 import imgMarker from "../../assets/marker.svg";
 import imgAirplain from "../../assets/airplain.svg";
 import imgDownButton from "../../assets/downButton.svg";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
@@ -16,14 +17,25 @@ const Start = (): JSX.Element => {
   const partialFullpage = useSelector(
     (state: RootState) => state.partialFullpage,
   );
+  const [waitScroll, setWaitScroll] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (partialFullpage === true) {
+      setTimeout(() => {
+        setWaitScroll(true);
+      }, 500);
+    } else {
+      setWaitScroll(false);
+    }
+  }, [partialFullpage]);
 
   return (
     <>
+      <StartNavbar partialFullpage={partialFullpage} />
       <S.StartPage
         partialFullpage={partialFullpage}
         onWheel={() => dispatch(changeState(true))}
       >
-        <StartNavbar partialFullpage={partialFullpage} />
         <S.StartMainContent>
           Pick에서,
           <br />
@@ -48,7 +60,7 @@ const Start = (): JSX.Element => {
           }}
         />
       </S.StartPage>
-      
+      <Introduce partialFullpage={partialFullpage} waitScroll={waitScroll} />
     </>
   );
 };

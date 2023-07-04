@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 
 export const StartPage = styled.div<{ partialFullpage: boolean }>`
+  oveflow: hidden;
   background: linear-gradient(to bottom, #ffffff, rgba(19, 14, 222, 0.3));
   display: flex;
   flex-direction: column;
@@ -17,7 +18,7 @@ export const StartPage = styled.div<{ partialFullpage: boolean }>`
 
 export const StartMainContent = styled.div`
   position: relative;
-  top: 10%;
+  top: 17.5%;
   letter-spacing: 0.25rem;
   font-weight: 600;
   font-size: 5rem;
@@ -30,7 +31,7 @@ export const StartMarker = styled.img`
 
 export const StartButton = styled.div`
   position: relative;
-  top: 20%;
+  top: 30%;
   width: 135px;
   z-index: 2;
 `;

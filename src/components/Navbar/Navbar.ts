@@ -4,10 +4,13 @@ export const Navbar = styled.nav<{ partialFullpage: boolean }>`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 70px;
+  height: 60px;
+  position: fixed;
+  z-index: 2;
   ${(props) =>
     props.partialFullpage &&
     css`
-      transform: translateY(100vh);
+      background-color: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     `}
 `;
