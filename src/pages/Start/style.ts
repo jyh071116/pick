@@ -19,9 +19,9 @@ export const StartPage = styled.div<{ partialFullpage: boolean }>`
 export const StartMainContent = styled.div`
   position: relative;
   top: 17.5%;
-  letter-spacing: 0.25rem;
   font-weight: 600;
   font-size: 5rem;
+  letter-spacing: -1px;
 `;
 
 export const StartMarker = styled.img`
@@ -43,11 +43,11 @@ export const StartButtonItem = styled.button`
   align-items: center;
   padding: 0.75rem 1rem;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   font-size: 1.25rem;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 `;
 
