@@ -17,7 +17,7 @@ const StartNavbar = (props: StartNavbarProps): JSX.Element => {
 
   return (
     <N.Navbar partialFullpage={props.partialFullpage}>
-      <S.StartNav>
+      <N.StartNav>
         <div>
           <Link
             to="/"
@@ -25,7 +25,7 @@ const StartNavbar = (props: StartNavbarProps): JSX.Element => {
               dispatch(changeState(false));
             }}
           >
-            <S.StartNavLogo src={imgLogo} alt="logo" />
+            <N.StartNavLogo src={imgLogo} alt="logo" />
           </Link>
         </div>
         <div>
@@ -43,7 +43,7 @@ const StartNavbar = (props: StartNavbarProps): JSX.Element => {
         <div>
           <Link to="/today">오늘의 추천</Link>
         </div>
-      </S.StartNav>
+      </N.StartNav>
     </N.Navbar>
   );
 };
