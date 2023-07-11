@@ -3,17 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@react-google-maps/api": "^2.18.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/google.maps": "^3.53.4",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "axios": "^1.4.0",
+    "kakao.maps.d.ts": "^0.1.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-kakao-maps-sdk": "^1.1.9",
+    "react-naver-maps": "^0.1.2",
     "react-redux": "^8.1.1",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
@@ -44,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/navermaps": "^3.6.5"
   }
 }

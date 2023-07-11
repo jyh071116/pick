@@ -1,7 +1,7 @@
 import * as S from "./style";
 import imgMaps from "../../assets/maps.svg";
 
-import React from "react";
+import React, { WheelEventHandler } from "react";
 import { AppDispatch } from "../../store";
 import { useDispatch } from "react-redux";
 import { changeState } from "../../store/partialFullpage";
@@ -18,8 +18,8 @@ const Introduce = (props: StartNavbarProps): JSX.Element => {
     <S.Intro
       partialFullpage={props.partialFullpage}
       waitScroll={props.waitScroll}
-      onWheel={() => {
-        if (window.scrollY === 0) {
+      onWheel={(e : any) => {
+        if (e.deltaY < 0 && window.scrollY === 0) {
           dispatch(changeState(false));
         }
       }}
