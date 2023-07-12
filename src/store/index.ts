@@ -3,6 +3,8 @@ import partialFullpage from "./partialFullpage";
 import searchVal from "./searchVal";
 import foodMarkers from "./foodMarkers";
 import placeMarkers from "./placeMarkers";
+import mapBound from "./mapBound";
+import placeOrFood from "./placeOrFood";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +12,8 @@ export const store = configureStore({
     searchVal: searchVal.reducer,
     foodMarkers: foodMarkers.reducer,
     placeMarkers: placeMarkers.reducer,
+    mapBound: mapBound.reducer,
+    placeOrFood: placeOrFood.reducer,
   },
 });
 

@@ -51,3 +51,15 @@ export const MapsImg = styled.img`
   position: relative;
   top: 5.5%;
 `
+
+export const ExampleImg = styled.img`
+  width: 850px;
+  position: relative;
+  top: 20.5%;
+`
+
+export const TodayImg = styled.img`
+  width: 700px;
+  position: relative;
+  top: 37.5%;
+`

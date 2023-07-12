@@ -17,7 +17,7 @@ const Main = () => {
     <>
       <MainNavbar />
       <S.TodayPick>
-        오늘의 <span style={{ color: "white" }}>Pick</span>
+        오늘의 <span style={{ color: "white" }}>Pick</span> : 사하구
       </S.TodayPick>
       <S.SelectMaps
         onClick={() => {

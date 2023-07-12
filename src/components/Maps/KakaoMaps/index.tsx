@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from "../../../store";
 import { useSelector, useDispatch } from "react-redux";
 import { setPlaceMarkers } from "../../../store/placeMarkers";
 import { setFoodMarkers } from "../../../store/foodMarkers";
+import { setPlaceBound, setFoodBound } from "../../../store/mapBound";
 
 const KakaoMaps = (props: { location: { lat: number; lng: number } }) => {
   const { kakao } = window;
@@ -18,12 +19,16 @@ const KakaoMaps = (props: { location: { lat: number; lng: number } }) => {
   const foodMarkers = useSelector((state: RootState) => state.foodMarkers);
   const placeMarkers = useSelector((state: RootState) => state.placeMarkers);
 
+  const placeOrFood = useSelector((state: RootState) => state.placeOrFood);
+
   const searchLocation = () => {
     const ps = new kakao.maps.services.Places();
     const bounds = new kakao.maps.LatLngBounds();
 
     ps.keywordSearch(`${searchVal} 맛집`, (data, status, _pagination) => {
       if (status === kakao.maps.services.Status.OK) {
+        dispatch(setFoodBound(data));
+
         let markers = [];
 
         for (var i = 0; i < data.length; i++) {
@@ -48,6 +53,8 @@ const KakaoMaps = (props: { location: { lat: number; lng: number } }) => {
 
     ps.keywordSearch(`${searchVal} 관광명소`, (data, status, _pagination) => {
       if (status === kakao.maps.services.Status.OK) {
+        dispatch(setPlaceBound(data));
+
         let markers = [];
 
         for (var i = 0; i < data.length; i++) {
@@ -84,7 +91,7 @@ const KakaoMaps = (props: { location: { lat: number; lng: number } }) => {
       // @ts-ignore
       onCreate={setMap}
     >
-      {foodMarkers.map((marker) => (
+      {(placeOrFood === "food" || placeOrFood === "both") && foodMarkers.map((marker) => (
         <MapMarker
           // @ts-ignore
           key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
@@ -101,7 +108,7 @@ const KakaoMaps = (props: { location: { lat: number; lng: number } }) => {
           }
         </MapMarker>
       ))}
-      {placeMarkers.map((marker) => (
+      {(placeOrFood === "place" || placeOrFood === "both") && placeMarkers.map((marker) => (
         <MapMarker
           // @ts-ignore
           key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}

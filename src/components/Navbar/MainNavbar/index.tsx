@@ -1,14 +1,17 @@
 import React, { useRef } from "react";
 import * as N from "../Navbar";
+import * as S from "./style";
 import imgLogo from "../../../assets/logo.svg";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
 import { changeState } from "../../../store/partialFullpage";
 import { changeSearchVal } from "../../../store/searchVal";
+import { changeS } from "../../../store/placeOrFood";
 
 const MainNavbar = (): JSX.Element => {
+  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const inputVal = useRef<string>();
 
@@ -27,22 +30,41 @@ const MainNavbar = (): JSX.Element => {
         </div>
         <div>
           <input
-            style={{ width: "100%" }}
+            style={{ width: "100%", border: "2px solid black", zIndex: "3", borderRadius: "5px"}}
             placeholder="Search"
             type="text"
             onInput={(e) => {
               inputVal.current = e.currentTarget.value;
             }}
             onKeyPress={(e) => {
-              if (inputVal.current && e.key === "Enter"){
-              dispatch(changeSearchVal(inputVal.current));
+              if (inputVal.current && e.key === "Enter") {
+                dispatch(changeSearchVal(inputVal.current));
               }
             }}
           />
         </div>
-        <div>지도</div>
-        <div>맛집</div>
-        <div>관광명소</div>
+        <S.NavElement
+          onClick={() => {
+            navigate("/main");
+            dispatch(changeS("both"));
+          }}
+        >
+          지도
+        </S.NavElement>
+        <S.NavElement
+          onClick={() => {
+            dispatch(changeS("food"));
+          }}
+        >
+          맛집
+        </S.NavElement>
+        <S.NavElement
+          onClick={() => {
+            dispatch(changeS("place"));
+          }}
+        >
+          관광명소
+        </S.NavElement>
       </N.StartNav>
     </N.Navbar>
   );
