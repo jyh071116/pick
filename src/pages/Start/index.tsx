@@ -37,7 +37,7 @@ const Start = (): JSX.Element => {
         onWheel={() => dispatch(changeState(true))}
       >
         <S.StartMainContent>
-          <span style={{color: "#130EDE"}}>Pick</span>에서,
+          <span style={{ color: "#130EDE" }}>Pick</span>에서,
           <br />
           지도로 여행을 떠나다.
         </S.StartMainContent>
