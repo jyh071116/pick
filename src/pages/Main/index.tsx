@@ -13,9 +13,13 @@ const Main = () => {
   const location = useGeoLocation();
   const nowLocation = location.coordinates;
 
+  const reload = () => {
+    setWhatMap(0);
+  }
+
   return (
-    <>
-      <MainNavbar />
+    <S.MainContainer>
+      <MainNavbar reload={reload}/>
       <S.TodayPick>
         오늘의 <span style={{ color: "white" }}>Pick</span> : 사하구
       </S.TodayPick>
@@ -40,7 +44,7 @@ const Main = () => {
       >
         Google
       </S.SelectMaps>
-      
+
       {whatMap === 0 && nowLocation ? (
         <KakaoMaps location={nowLocation} />
       ) : null}
@@ -50,7 +54,7 @@ const Main = () => {
       {whatMap === 2 && nowLocation ? (
         <GoogleMaps location={nowLocation} />
       ) : null}
-    </>
+    </S.MainContainer>
   );
 };
 

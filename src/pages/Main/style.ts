@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.div`
+  overflow: scroll;
+`
+
 export const SelectMaps = styled.button`
   padding: 10px;
   z-index: 2;

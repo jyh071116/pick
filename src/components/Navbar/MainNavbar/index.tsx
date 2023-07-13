@@ -10,7 +10,7 @@ import { changeState } from "../../../store/partialFullpage";
 import { changeSearchVal } from "../../../store/searchVal";
 import { changeS } from "../../../store/placeOrFood";
 
-const MainNavbar = (): JSX.Element => {
+const MainNavbar = (props : {reload : any}): JSX.Element => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const inputVal = useRef<string>();
@@ -39,6 +39,7 @@ const MainNavbar = (): JSX.Element => {
             onKeyPress={(e) => {
               if (inputVal.current && e.key === "Enter") {
                 dispatch(changeSearchVal(inputVal.current));
+                props.reload();
               }
             }}
           />
