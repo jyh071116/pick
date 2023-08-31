@@ -51,7 +51,9 @@ const NaverMaps = (props: { location: { lat: number; lng: number } }) => {
   }, [map]);
 
   return (
-    <NavermapsProvider ncpClientId="njhdwkp91k">
+    <NavermapsProvider
+      ncpClientId={process.env.REACT_APP_NAVER_CLIENT_ID as string}
+    >
       <MapDiv
         style={{
           width: "70vw",

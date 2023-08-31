@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 
 const GoogleMaps = (props: { location: { lat: number; lng: number } }) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBINIoP-2MwtGUoKMg76Ea4FdNA1H6sroo",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_KEY as string,
     version: "3.47",
   });
   const [info, setInfo] = useState();
