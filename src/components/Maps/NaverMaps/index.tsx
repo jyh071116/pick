@@ -9,11 +9,6 @@ import {
 import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 
-interface MarkerType {
-  content: string;
-  position: { lat: number; lng: number };
-}
-
 const NaverMaps = (props: { location: { lat: number; lng: number } }) => {
   const [map, setMap] = useState<any>();
 
