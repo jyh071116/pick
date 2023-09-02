@@ -2,7 +2,6 @@ import * as S from "./style";
 import * as N from "../Navbar";
 import imgLogo from "../../../assets/logo.svg";
 
-import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";

@@ -5,7 +5,7 @@ import imgMarker from "../../assets/marker.svg";
 import imgAirplain from "../../assets/airplain.svg";
 import imgDownButton from "../../assets/downButton.svg";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";

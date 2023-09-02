@@ -3,7 +3,6 @@ import imgMaps from "../../assets/maps.svg";
 import imgExample from "../../assets/example.svg"
 import imgToday from "../../assets/Today.svg"
 
-import React from "react";
 import { AppDispatch } from "../../store";
 import { useDispatch } from "react-redux";
 import { changeState } from "../../store/partialFullpage";

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import * as N from "../Navbar";
 import * as S from "./style";
 import imgLogo from "../../../assets/logo.svg";

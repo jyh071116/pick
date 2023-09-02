@@ -1,6 +1,6 @@
 import * as S from "./style";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import useGeoLocation from "../../hooks/useGeoLocation";
 
 import MainNavbar from "../../components/Navbar/MainNavbar";

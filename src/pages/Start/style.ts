@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 
 export const StartPage = styled.div<{ partialFullpage: boolean }>`
-  oveflow: hidden;
+  overflow: hidden;
   background: linear-gradient(to bottom, #ffffff, rgba(19, 14, 222, 0.3));
   display: flex;
   flex-direction: column;

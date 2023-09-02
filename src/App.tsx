@@ -1,7 +1,6 @@
 import Main from "./pages/Main";
 import Start from "./pages/Start";
 
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {

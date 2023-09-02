@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
 import { AppDispatch, RootState } from "../../../store";
